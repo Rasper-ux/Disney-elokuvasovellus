@@ -1,0 +1,5 @@
+CREATE TABLE films (id SERIAL PRIMARY KEY, name TEXT, year INTEGER, runtime INTEGER);
+CREATE TABLE users (id SERIAL PRIMARY KEY, username TEXT, password TEXT);
+CREATE TABLE user_info  (id SERIAL PRIMARY KEY, user_id INREGER REFERENCES users, age INTEGER, favourite_film TEXT);
+CREATE TABLE reviews (id SERIAL PRIMARY KEY, film_id INTEGER REFERENCES film, writer_id INTEGER REFERENCES users, review TEXT);
+CREATE TABLE stars (id SERIAL PRIMARY KEY, film_id INTEGER REFERENCES, writer_id INTEGER REFERENCES users, stars INTEGER);
