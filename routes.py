@@ -5,7 +5,7 @@ import films, users
 @app.route("/")
 def index():
     list = films.get_list()
-    return render_template("index.html", messages=list)
+    return render_template("index.html", movies=list)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():

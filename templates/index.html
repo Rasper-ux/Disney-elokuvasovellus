@@ -1,6 +1,16 @@
-Number of films: {{ count }}
+<h1>Disney-elokuvasovellus</h1>
 <hr>
 {% for movie in movies %}
-{{ movie.name }}
+<i>Nimi:</i> {{ movie[0] }}
+<p>
+<i>Vuosi:</i> {{ movie[1] }}
+<p>
+<i>Kesto</i> {{ movie[2] }}
 <hr>
 {% endfor %}
+{% if session.user_id %}
+Olet kirjautunut sisään.
+<a href="/logout">Kirjaudu ulos</a>
+{% else %}
+<a href="/login">Kirjaudu sisään</a>
+{% endif %}
