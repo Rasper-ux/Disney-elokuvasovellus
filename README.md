@@ -6,3 +6,24 @@ Sovelluksessa näkyy luettelo vuodesta 1937 nykypäivään julkaistuista Disneyn
 - Ylläpitäjä voi tarvittaessa poistaa käyttäjän antaman arvion sekä määrittää elokuvista näytettävät tiedot.
 - Käyttäjä voi etsiä elokuvia, esim. keston, arvosanan tai julkaisuvuoden mukaan.
 - Luettelon elokuvista voi myös järjestää elokuvien keston, arvosanan tai julkaisuvuoden mukaan.
+
+Tällä hetkellä sovelluksessa toimii kirjautuminen ja uuden tunnuksen luominen. Lisäksi aloitussivulla näkyy lista elokuvista (vielä vain osa niistä).
+
+Käynnistysohje:
+
+Kloonaa tämä repositorio omalle koneellesi ja siirry sen juurikansioon. Luo kansioon .env-tiedosto ja määritä sen sisältö seuraavanlaiseksi:
+
+DATABASE_URL=postgresql+psycopg2://
+SECRET_KEY=95d3763bb55e744e83op181a47b4e1c6
+
+Seuraavaksi aktivoi virtuaaliympäristö ja asenna sovelluksen riippuvuudet komennoilla
+
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install -r ./requirements.txt
+
+Määritä vielä tietokannan skeema komennolla
+$ psql < schema.sql
+
+Nyt voit käynnistää sovelluksen komennolla
+$ flask run
