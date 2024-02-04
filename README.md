@@ -9,12 +9,15 @@ Sovelluksessa näkyy luettelo vuodesta 1937 nykypäivään julkaistuista Disneyn
 
 Tällä hetkellä sovelluksessa toimii kirjautuminen ja uuden tunnuksen luominen. Lisäksi aloitussivulla näkyy lista elokuvista (vielä vain osa niistä).
 
+
 Käynnistysohje:
 
 Kloonaa tämä repositorio omalle koneellesi ja siirry sen juurikansioon. Luo kansioon .env-tiedosto ja määritä sen sisältö seuraavanlaiseksi:
 
 DATABASE_URL=postgresql+psycopg2://
+
 SECRET_KEY=95d3763bb55e744e83op181a47b4e1c6
+
 
 Seuraavaksi aktivoi virtuaaliympäristö ja asenna sovelluksen riippuvuudet komennoilla
 
