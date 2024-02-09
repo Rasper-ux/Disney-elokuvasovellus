@@ -1,11 +1,11 @@
 <h1>Disney-elokuvasovellus</h1>
 <hr>
 {% for movie in movies %}
-<i>Nimi:</i> {{ movie[0] }}
+<i>Nimi:</i> {{ movie[1] }}
 <p>
-<i>Vuosi:</i> {{ movie[1] }}
+<i>Vuosi:</i> {{ movie[2] }}
 <p>
-<i>Kesto (min):</i> {{ movie[2] }}
+<i>Kesto (min):</i> {{ movie[3] }}
 <hr>
 {% endfor %}
 {% if session.user_id %}
