@@ -38,3 +38,9 @@ def register():
             return redirect("/")
         else:
             return render_template("error.html", message="Registration failed")
+
+@app.route("/film/<int:id>")
+def film(id):
+    list=films.get_review(id)
+    #list2=films.get_stars(id)
+    return render_template("film.html", reviews=list)

@@ -6,6 +6,8 @@
 <i>Vuosi:</i> {{ movie[2] }}
 <p>
 <i>Kesto (min):</i> {{ movie[3] }}
+<p>
+<a href="/film/{{ movie[0] }}">Näytä arvostelut</a>
 <hr>
 {% endfor %}
 {% if session.user_id %}
