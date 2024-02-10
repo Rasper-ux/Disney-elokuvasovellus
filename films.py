@@ -15,7 +15,7 @@ def get_review(id):
 def add_review(content, id):
     user_id = users.user_id()
     try:
-        sql = text("INSERT INTO reviews (film_id, writer_id, review) VALUES (:id, :user_id, :content")
+        sql = text("INSERT INTO reviews (film_id, writer_id, review) VALUES (:id, :user_id, :content)")
         db.session.execute(sql, {"film_id":id, "user_id":user_id, "content":content})
         db.session.commit()
         return True
