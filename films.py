@@ -8,6 +8,6 @@ def get_list():
     return result.fetchall()
 
 def get_review(id):
-    sql = text("SELECT * FROM films")
-    result = db.session.execute(sql)
+    sql = text("SELECT * FROM films WHERE id=:id")
+    result = db.session.execute(sql, {"id":id})
     return result.fetchall()
