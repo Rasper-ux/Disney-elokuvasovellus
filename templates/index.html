@@ -1,4 +1,5 @@
 <h1>Disney-elokuvasovellus</h1>
+{% if session.user_id %}
 <hr>
 {% for movie in movies %}
 <i>Nimi:</i> {{ movie[1] }}
@@ -10,9 +11,17 @@
 <a href="/film/{{ movie[0] }}">Näytä arvostelut</a>
 <hr>
 {% endfor %}
-{% if session.user_id %}
 Olet kirjautunut sisään.
 <a href="/logout">Kirjaudu ulos</a>
 {% else %}
+<hr>
+{% for movie in movies %}
+<i>Nimi:</i> {{ movie[1] }}
+<p>
+<i>Vuosi:</i> {{ movie[2] }}
+<p>
+<i>Kesto (min):</i> {{ movie[3] }}
+<hr>
+{% endfor %}
 <a href="/login">Kirjaudu sisään</a>
 {% endif %}

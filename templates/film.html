@@ -1,7 +1,13 @@
+<form action="/send/{{ id }}" method="POST">
 <h1>Eteenpäin päästy</h1>
 <hr>
 {% for review in reviews %}
 <i>Nimi:</i> {{ review[1] }}
 <hr>
-<a href="/">Etusivulle</a>
 {% endfor %}
+Arvostele: <br>
+<textarea name="content" rows="3" cols="40"></textarea>
+<br>
+<input type="submit" value="Lähetä">
+</form>
+<a href="/">Etusivulle</a>

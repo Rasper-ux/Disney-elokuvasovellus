@@ -43,4 +43,12 @@ def register():
 def film(id):
     list=films.get_review(id)
     #list2=films.get_stars(id)
-    return render_template("film.html", reviews=list)
+    return render_template("film.html", reviews=list, id=id)
+
+@app.route("/send/<int:id>", methods=["POST"])
+def send(id):
+    content = request.form["content"]
+    if films.add_review(content, id):
+        return redirect("/")
+    else:
+        return render_template("error.html", message="The message was not sent successfully")
