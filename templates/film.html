@@ -2,7 +2,9 @@
 <h1>Eteenpäin päästy</h1>
 <hr>
 {% for review in reviews %}
-<i>Nimi:</i> {{ review[1] }}
+<i>Käyttäjä:</i> {{ review[3] }}
+<p>
+<i>Arvostelu:</i> {{ review[2] }}
 <hr>
 {% endfor %}
 Arvostele: <br>
