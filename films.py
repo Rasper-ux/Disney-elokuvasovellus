@@ -12,6 +12,11 @@ def get_review(id):
     result = db.session.execute(sql, {"id":id})
     return result.fetchall()
 
+def get_name(id):
+    sql = text("SELECT name FROM films WHERE id=:id")
+    result = db.session.execute(sql, {"id":id})
+    return result.fetchall()
+
 def add_review(content, id):
     user_id = users.user_id()
     try:

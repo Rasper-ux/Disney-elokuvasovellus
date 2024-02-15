@@ -42,8 +42,9 @@ def register():
 @app.route("/film/<int:id>")
 def film(id):
     list=films.get_review(id)
+    name=films.get_name(id)
     #list2=films.get_stars(id)
-    return render_template("film.html", reviews=list, id=id)
+    return render_template("film.html", reviews=list, id=id, name=name[0][0])
 
 @app.route("/send/<int:id>", methods=["POST"])
 def send(id):
