@@ -53,11 +53,12 @@ def film(id):
 @app.route("/send/<int:id>", methods=["POST"])
 def send(id):
     content = request.form["content"]
-    if len(content)==0:
-        return render_template("error.html", message="The review was empty")
+    stars = request.form["stars"]
+    if len(content)==0 or len(stars)==0:
+        return render_template("error.html", message="Choose stars and write review")
     if len(content)>100:
         return render_template("error.html", message="The review was too long")
-    if films.add_review(content, id):
+    if films.add_review(content, int(stars), id):
         return redirect("/")
     else:
         return render_template("error.html", message="The review was not sent successfully")

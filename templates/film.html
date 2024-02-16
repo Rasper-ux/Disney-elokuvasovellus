@@ -2,14 +2,23 @@
 <h1>{{ name }}</h1>
 <hr>
 {% for review in reviews %}
-<i>Käyttäjä:</i> {{ review[3] }}
+<i>Käyttäjä:</i> {{ review[4] }}
 <p>
 <i>Arvostelu:</i> {{ review[2] }}
+<p>
+<i>Tähdet:</i> {{ review[3] }}
 <hr>
 {% endfor %}
 Arvostele: <br>
+<p>
+<input type="radio" name="stars" value="1"> 1
+<input type="radio" name="stars" value="2"> 2
+<input type="radio" name="stars" value="3"> 3
+<input type="radio" name="stars" value="4"> 4
+<input type="radio" name="stars" value="5"> 5
+<p>
 <textarea name="content" rows="3" cols="40"></textarea>
-<br>
+<p>
 <input type="submit" value="Lähetä">
 </form>
 <a href="/">Etusivulle</a>
