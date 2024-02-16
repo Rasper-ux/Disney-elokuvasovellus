@@ -14,6 +14,8 @@ def login():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
+        if len(username)==0 or len(password)==0:
+            return render_template("error.html", message="Incorrect usrename or password")
         if users.login(username, password):
             return redirect("/")
         else:
@@ -32,6 +34,8 @@ def register():
         username = request.form["username"]
         password1 = request.form["password1"]
         password2 = request.form["password2"]
+        if len(username)==0 or len(password1)==0 or len(password2)==0:
+            return render_template("error.html", message="Registration failed")
         if password1 != password2:
             return render_template("error.html", message="Passwords differ")
         if users.register(username, password1):
@@ -49,7 +53,11 @@ def film(id):
 @app.route("/send/<int:id>", methods=["POST"])
 def send(id):
     content = request.form["content"]
+    if len(content)==0:
+        return render_template("error.html", message="The review was empty")
+    if len(content)>100:
+        return render_template("error.html", message="The review was too long")
     if films.add_review(content, id):
         return redirect("/")
     else:
-        return render_template("error.html", message="The message was not sent successfully")
+        return render_template("error.html", message="The review was not sent successfully")
