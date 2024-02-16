@@ -17,6 +17,9 @@ def get_name(id):
     result = db.session.execute(sql, {"id":id})
     return result.fetchall()
 
+def get_alikes(id):
+    None
+
 def add_review(content, stars, id):
     user_id = users.user_id()
     try:
