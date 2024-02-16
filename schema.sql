@@ -24,4 +24,17 @@ INSERT INTO films (name, year, runtime) VALUES ('Peter Pan', 1953, 77);
 INSERT INTO films (name, year, runtime) VALUES ('Lady and the Tramp', 1955, 76);
 INSERT INTO films (name, year, runtime) VALUES ('Sleeping Beauty', 1959, 75);
 
+INSERT INTO alike (film1_id, film2_id) VALUES (1,15)
+INSERT INTO alike (film1_id, film2_id) VALUES (15,1)
+INSERT INTO alike (film1_id, film2_id) VALUES (1,19)
+INSERT INTO alike (film1_id, film2_id) VALUES (19,1)
+INSERT INTO alike (film1_id, film2_id) VALUES (15,19)
+INSERT INTO alike (film1_id, film2_id) VALUES (19,15)
+INSERT INTO alike (film1_id, film2_id) VALUES (4,5)
+INSERT INTO alike (film1_id, film2_id) VALUES (5,4)
+INSERT INTO alike (film1_id, film2_id) VALUES (4,18)
+INSERT INTO alike (film1_id, film2_id) VALUES (18,4)
+INSERT INTO alike (film1_id, film2_id) VALUES (5,18)
+INSERT INTO alike (film1_id, film2_id) VALUES (18,5)
+
 
