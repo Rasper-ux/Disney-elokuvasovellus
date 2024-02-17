@@ -2,7 +2,7 @@
 Sovelluksessa näkyy luettelo vuodesta 1937 nykypäivään julkaistuista Disneyn animaatioelokuvista, joista voi etsiä tietoa ja lukea arvioita.
 - Käyttäjä voi kirjautua sisään ja ulos sekä luoda uuden tunnuksen.
 - Käyttäjä voi lisätä profiiliinsa tietoa, kuten käyttäjänimen, syntymäpäivän ja lempielokuvan.
-- Käyttäjä näkee luettelon elokuvista julkaisuvuosineen aakkosjärjestyksessä ja voi painaa elokuvasta, jolloin siitä näytetään lisää tietoa (esimerkiksi kesto, muiden käyttäjien antamat arvosanat ja kirjalliset arvostelut).
+- Käyttäjä näkee luettelon elokuvista julkaisuvuosineen julkaisujärjestyksessä ja voi painaa elokuvasta, jolloin siitä näytetään lisää tietoa (esimerkiksi kesto, muiden käyttäjien antamat arvosanat ja kirjalliset arvostelut).
 - Käyttäjä voi etsiä elokuvia, esim. keston, arvosanan tai julkaisuvuoden mukaan.
 - Luettelon elokuvista voi myös järjestää elokuvien keston, arvosanan tai julkaisuvuoden mukaan.
 
