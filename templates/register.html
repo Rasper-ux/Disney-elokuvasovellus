@@ -7,3 +7,9 @@ Salasana uudestaan: <input type="password" name="password2">
 <p>
 <input type="submit" value="Luo tunnus">
 </form>
+{% if error %}
+<p>
+Rekisteröityminen epäonnistui
+{% endif %}
+<p>
+<a href="/">Etusivulle</a>

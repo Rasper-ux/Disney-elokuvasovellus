@@ -30,19 +30,19 @@ def logout():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "GET":
-        return render_template("register.html")
+        return render_template("register.html", error=False)
     if request.method == "POST":
         username = request.form["username"]
         password1 = request.form["password1"]
         password2 = request.form["password2"]
         if len(username)==0 or len(password1)==0 or len(password2)==0:
-            return render_template("error.html", message="Registration failed")
+            return render_template("register.html", error=True)
         if password1 != password2:
-            return render_template("error.html", message="Passwords differ")
+            return render_template("register.html", error=True)
         if users.register(username, password1):
             return redirect("/")
         else:
-            return render_template("error.html", message="Registration failed")
+            return render_template("register.html", error=True)
 
 @app.route("/film/<int:id>")
 def film(id):
