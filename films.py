@@ -18,7 +18,9 @@ def get_name(id):
     return result.fetchall()
 
 def get_alikes(id):
-    None
+    sql = text("SELECT F.name FROM alike A, films F WHERE A.film1_id=:id AND A.film2_id=F.id;")
+    result = db.session.execute(sql, {"id":id})
+    return result.fetchall()
 
 def add_review(content, stars, id):
     user_id = users.user_id()
