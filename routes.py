@@ -10,16 +10,17 @@ def index():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
-        return render_template("login.html")
+        return render_template("login.html", error=False)
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
         if len(username)==0 or len(password)==0:
-            return render_template("error.html", message="Incorrect username or password")
+            return render_template("login.html", error=True)
         if users.login(username, password):
             return redirect("/")
         else:
-            return render_template("error.html", message="Incorrect username or password")
+            return render_template("login.html", error=True)
+
 
 @app.route("/logout")
 def logout():
