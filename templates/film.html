@@ -26,6 +26,10 @@ Arvostele: <br>
 <p>
 <textarea name="content" rows="3" cols="40"></textarea>
 <p>
+{% if error %}
+{{ message }}
+<p>
+{% endif %}
 <input type="submit" value="Lähetä">
 </form>
 <a href="/">Etusivulle</a>

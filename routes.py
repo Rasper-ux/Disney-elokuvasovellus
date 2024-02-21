@@ -15,11 +15,11 @@ def login():
         username = request.form["username"]
         password = request.form["password"]
         if len(username)==0 or len(password)==0:
-            return render_template("login.html", error=True)
+            return render_template("login.html", error=True, message="Täytä kaikki kentät")
         if users.login(username, password):
             return redirect("/")
         else:
-            return render_template("login.html", error=True)
+            return render_template("login.html", error=True, message="Väärä käyttäjätunnus tai salasana")
 
 
 @app.route("/logout")
@@ -36,30 +36,33 @@ def register():
         password1 = request.form["password1"]
         password2 = request.form["password2"]
         if len(username)==0 or len(password1)==0 or len(password2)==0:
-            return render_template("register.html", error=True)
+            return render_template("register.html", error=True, message="Täytä kaikki kentät")
         if password1 != password2:
-            return render_template("register.html", error=True)
+            return render_template("register.html", error=True, message="Salasanat poikkeavat")
         if users.register(username, password1):
             return redirect("/")
         else:
-            return render_template("register.html", error=True)
+            return render_template("register.html", error=True, message="Rekisteröityminen epäonnistui")
 
 @app.route("/film/<int:id>")
 def film(id):
     list=films.get_review(id)
     name=films.get_name(id)
     alikes=films.get_alikes(id)
-    return render_template("film.html", reviews=list, id=id, name=name[0][0], alikes=alikes)
+    return render_template("film.html", reviews=list, id=id, name=name[0][0], alikes=alikes, error=False)
 
 @app.route("/send/<int:id>", methods=["POST"])
 def send(id):
+    list=films.get_review(id)
+    name=films.get_name(id)
+    alikes=films.get_alikes(id)
     content = request.form["content"]
     stars = request.form["stars"]
     if len(content)==0 or len(stars)==0:
-        return render_template("error.html", message="Choose stars and write review")
+        return render_template("film.html", reviews=list, id=id, name=name[0][0], alikes=alikes, error=True, message="Valitse tähdet ja kirjoita arvostelu")
     if len(content)>100:
-        return render_template("error.html", message="The review was too long")
+        return render_template("film.html", reviews=list, id=id, name=name[0][0], alikes=alikes, error=True, message="Arvostelu oli liian pitkä, max 100 merkkiä sallittu")
     if films.add_review(content, int(stars), id):
         return redirect("/")
     else:
-        return render_template("error.html", message="The review was not sent successfully")
+        return render_template("film.html", reviews=list, id=id, name=name[0][0], alikes=alikes, error=True, message="Arvostelun lähetys ei onnistunut")

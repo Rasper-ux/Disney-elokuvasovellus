@@ -7,7 +7,7 @@ Salasana: <input type="password" name="password">
 </form>
 <p>
 {% if error %}
-Väärä käyttäjänimi tai salasana
+{{ message }}
 <p>
 Jos sinulla ei ole tunnusta, voit luoda uuden tunnuksen <a href="/register">tästä</a>
 {% else %}
