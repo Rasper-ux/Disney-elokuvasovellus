@@ -1,3 +1,4 @@
+<form action="/info/{{ id }}" method="POST">
 {% if info %}
 <i>Käyttäjänimi:</i> {{ info[0][0] }}
 <p>
@@ -17,5 +18,9 @@ Lempielokuva:
 <input type="submit" value="Lähetä">
 </form>
 <p>
+{% if message %}
+{{ message }}
+<p>
+{% endif %}
 {% endif %}
 <a href="/">Etusivulle</a>

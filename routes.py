@@ -74,6 +74,24 @@ def user():
         return False
     info = users.get_info(user_id)
     if len(info)==0:
-        return render_template("user.html", info=False)
+        return render_template("user.html", id=user_id, info=False)
     else:
-        return render_template("user.html", info=info)
+        return render_template("user.html", id=user_id, info=info)
+
+@app.route("/info/<int:id>", methods=["POST"])
+def add_info(id):
+    age=request.form["age"]
+    content=request.form["content"]
+    if len(content)==0 or len(age)==0:
+        return render_template("user.html", id=id, info=False, message="Täytä molemmat kentät")
+    if len(content)>121:
+        return render_template("user.html", id=id, info=False, message="Elokuvan nimi ei voi olla noin pitkä")
+    if int(age)<0 or int(age)>120:
+        return render_template("user.html", id=id, info=False, message="Kirjoita oikea ikäsi")
+    if users.add_info(id, int(age), content):
+        info = users.get_info(id)
+        return render_template("user.html", id=id, info=info)
+    else:
+        return render_template("user.html", id=id, info=False, message="Lähetys epäonnistui")
+
+
