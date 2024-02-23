@@ -31,3 +31,17 @@ def register(username, password):
 
 def user_id():
     return session.get("user_id",0)
+
+def get_info(id):
+    sql = text("SELECT U.username, A.age, A.favourite_film FROM users U, user_info A WHERE U.id=:id AND U.id=A.user_id")
+    result = db.session.execute(sql, {"id":id})
+    return result.fetchall()
+
+def add_info(id, age, film):
+    try:
+        sql = text("INSERT INTO user_info (user_id, age, favourite_film) VALUES (:id, :age, :film)")
+        db.session.execute(sql, {"id":id, "age":age, "film":film})
+        db.session.commit()
+        return True
+    except:
+        return False
