@@ -72,4 +72,8 @@ def user():
     user_id = users.user_id()
     if user_id == 0:
         return False
-    return render_template("user.html")
+    info = users.get_info(user_id)
+    if len(info)==0:
+        return render_template("user.html", info=False)
+    else:
+        return render_template("user.html", info=info)

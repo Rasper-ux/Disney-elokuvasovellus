@@ -1,1 +1,21 @@
-<h1>Käyttäjä</h1>
+{% if info %}
+<i>Käyttäjänimi:</i> {{ info[0][0] }}
+<p>
+<i>Ikä:</i> {{ info[0][1] }}
+<p>
+<i>Lempielokuva:</i> {{ info[0][2] }}
+<p>
+{% else %}
+Lisää tietoja: <br>
+<p>
+Ikä: 
+<textarea name="age" rows="1" cols="3"></textarea>
+<p>
+Lempielokuva: 
+<textarea name="content" rows="1" cols="30"></textarea>
+<p>
+<input type="submit" value="Lähetä">
+</form>
+<p>
+{% endif %}
+<a href="/">Etusivulle</a>
