@@ -66,3 +66,10 @@ def send(id):
         return redirect("/")
     else:
         return render_template("film.html", reviews=list, id=id, name=name[0][0], alikes=alikes, error=True, message="Arvostelun lähetys ei onnistunut")
+
+@app.route("/user")
+def user():
+    user_id = users.user_id()
+    if user_id == 0:
+        return False
+    return render_template("user.html")

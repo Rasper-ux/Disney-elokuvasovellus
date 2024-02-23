@@ -2,7 +2,7 @@
 {% if session.user_id %}
 <p>
 Olet kirjautunut sisään.
-<a href="/logout">Kirjaudu ulos</a>
+<a href="/logout">Kirjaudu ulos</a> | <a href="/user">Omat tiedot</a>
 <hr>
 {% for movie in movies %}
 <i>Nimi:</i> {{ movie[1] }}
