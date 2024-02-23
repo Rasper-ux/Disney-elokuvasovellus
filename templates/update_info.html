@@ -1,0 +1,17 @@
+<form action="/send_update/{{ id }}" method="POST">
+Muokkaa tietojasi: <br>
+<p>
+Ikä: 
+<textarea name="age" rows="1" cols="3"></textarea>
+<p>
+Lempielokuva: 
+<textarea name="content" rows="1" cols="30"></textarea>
+<p>
+<input type="submit" value="Lähetä">
+</form>
+<p>
+{% if error %}
+{{ message }}
+<p>
+{% endif %}
+<a href="/">Etusivulle</a>

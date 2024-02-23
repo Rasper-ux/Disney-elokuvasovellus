@@ -45,3 +45,14 @@ def add_info(id, age, film):
         return True
     except:
         return False
+
+def update_info(id, age, film):
+    try:
+        sql = text("UPDATE user_info SET age=:age, favourite_film=:film WHERE user_id=:id")
+        db.session.execute(sql, {"age":age, "film":film, "id":id})
+        db.session.commit()
+        return True
+    except:
+        return False
+
+

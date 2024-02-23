@@ -42,7 +42,7 @@ def register():
         if users.register(username, password1):
             return redirect("/")
         else:
-            return render_template("register.html", error=True, message="Rekisteröityminen epäonnistui")
+            return render_template("register.html", error=True, message="Käyttäjätunnus on jo käytössä")
 
 @app.route("/film/<int:id>")
 def film(id):
@@ -94,4 +94,23 @@ def add_info(id):
     else:
         return render_template("user.html", id=id, info=False, message="Lähetys epäonnistui")
 
+@app.route("/update_info/<int:id>")
+def update_info(id):
+    return render_template("update_info.html", id=id, error=False)
+
+@app.route("/send_update/<int:id>", methods=["POST"])
+def send_update(id):
+    age=request.form["age"]
+    content=request.form["content"]
+    if len(content)==0 or len(age)==0:
+        return render_template("update_info.html", id=id, error=True, message="Täytä molemmat kentät")
+    if len(content)>121:
+        return render_template("update_info.html", id=id, error=True, message="Elokuvan nimi ei voi olla noin pitkä")
+    if int(age)<0 or int(age)>120:
+        return render_template("update_info.html", id=id, error=True, message="Kirjoita oikea ikäsi")
+    if users.update_info(id, int(age), content):
+        info = users.get_info(id)
+        return render_template("user.html", id=id, info=info)
+    else:
+        return render_template("update_info.html", id=id, error=True, message="Päivitys epäonnistui")
 
