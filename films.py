@@ -7,6 +7,8 @@ def get_list(order):
         sql = text("SELECT id, name, year, runtime FROM films ORDER BY year")
     if order==1:
         sql = text("SELECT id, name, year, runtime FROM films ORDER BY year DESC")
+    if order==2:
+        sql = text("SELECT F.id, F.name, F.year, F.runtime, AVG(R.stars) FROM films F, reviews R WHERE F.id=R.film_id GROUP BY F.id ORDER BY AVG(R.stars) DESC")
     result = db.session.execute(sql)
     return result.fetchall()
 
