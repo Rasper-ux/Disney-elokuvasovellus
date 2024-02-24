@@ -12,6 +12,12 @@ def order(number):
     list = films.get_list(number)
     return render_template("index.html", movies=list)
 
+@app.route("/search", methods=["GET"])
+def search():
+    query = request.args["query"]
+    film = films.search(query)
+    return render_template("index.html", movies=film)
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":

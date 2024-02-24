@@ -38,3 +38,7 @@ def add_review(content, stars, id):
     except:
         return False
 
+def search(query):
+    sql = text("SELECT id, name, year, runtime FROM films WHERE name LIKE :query")
+    result = db.session.execute(sql, {"query":"%"+query+"%"})
+    return result.fetchall()
