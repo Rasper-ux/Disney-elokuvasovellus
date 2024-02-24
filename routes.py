@@ -114,3 +114,7 @@ def send_update(id):
     else:
         return render_template("update_info.html", id=id, error=True, message="Päivitys epäonnistui")
 
+@app.route("/show_info/<int:id>")
+def show_info(id):
+    info = users.get_info(id)
+    return render_template("show_user.html", info=info)

@@ -8,7 +8,7 @@ def get_list():
     return result.fetchall()
 
 def get_review(id):
-    sql = text("SELECT F.id, F.name, R.review, R.stars, U.username FROM films F, reviews R, users U WHERE F.id=:id AND F.id=R.film_id AND U.id=R.writer_id")
+    sql = text("SELECT F.id, F.name, R.review, R.stars, U.username, U.id FROM films F, reviews R, users U WHERE F.id=:id AND F.id=R.film_id AND U.id=R.writer_id")
     result = db.session.execute(sql, {"id":id})
     return result.fetchall()
 

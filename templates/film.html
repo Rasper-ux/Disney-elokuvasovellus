@@ -9,7 +9,7 @@
 {% endfor %}
 <hr>
 {% for review in reviews %}
-<i>Käyttäjä:</i> {{ review[4] }}
+<i>Käyttäjä:</i> <a href="/show_info/{{ review[5] }}">{{ review[4] }}</a>
 <p>
 <i>Arvostelu:</i> {{ review[2] }}
 <p>
