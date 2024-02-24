@@ -4,7 +4,12 @@ import films, users
 
 @app.route("/")
 def index():
-    list = films.get_list()
+    list = films.get_list(0)
+    return render_template("index.html", movies=list)
+
+@app.route("/order/<int:number>")
+def order(number):
+    list = films.get_list(number)
     return render_template("index.html", movies=list)
 
 @app.route("/login", methods=["GET", "POST"])

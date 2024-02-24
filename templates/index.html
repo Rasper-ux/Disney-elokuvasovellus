@@ -3,6 +3,8 @@
 <p>
 Olet kirjautunut sisään.
 <a href="/logout">Kirjaudu ulos</a> | <a href="/user">Omat tiedot</a>
+<p>
+Järjestä:  <a href="/order/1">Uusimmasta vanhimpaani</a> | <a href="/">Vanhimmasta uusimpaaan</a>
 <hr>
 {% for movie in movies %}
 <i>Nimi:</i> {{ movie[1] }}
@@ -17,6 +19,8 @@ Olet kirjautunut sisään.
 {% else %}
 <p>
 <a href="/login">Kirjaudu sisään</a>
+<p>
+Järjestä:  <a href="/order/1">Uusimmasta vanhimpaani</a> | <a href="/">Vanhimmasta uusimpaaan</a>
 <hr>
 {% for movie in movies %}
 <i>Nimi:</i> {{ movie[1] }}

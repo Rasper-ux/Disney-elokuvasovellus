@@ -2,8 +2,11 @@ from db import db
 import users
 from sqlalchemy.sql import text
 
-def get_list():
-    sql = text("SELECT id, name, year, runtime FROM films ORDER BY year")
+def get_list(order):
+    if order==0:
+        sql = text("SELECT id, name, year, runtime FROM films ORDER BY year")
+    if order==1:
+        sql = text("SELECT id, name, year, runtime FROM films ORDER BY year DESC")
     result = db.session.execute(sql)
     return result.fetchall()
 
