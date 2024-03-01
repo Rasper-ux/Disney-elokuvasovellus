@@ -26,6 +26,8 @@ def login():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
+        if session["csrf_token"] != request.form["csrf_token"]:
+            return render_template("login.html", error=True, message="Kirjautuminen ei onnistu")    
         if len(username)==0 or len(password)==0:
             return render_template("login.html", error=True, message="Täytä kaikki kentät")
         if users.login(username, password):
@@ -47,6 +49,8 @@ def register():
         username = request.form["username"]
         password1 = request.form["password1"]
         password2 = request.form["password2"]
+        if session["csrf_token"] != request.form["csrf_token"]:
+            return render_template("register.html", error=True, message="Rekisteröityminen ei onnistu")
         if len(username)==0 or len(password1)==0 or len(password2)==0:
             return render_template("register.html", error=True, message="Täytä kaikki kentät")
         if password1 != password2:
@@ -96,6 +100,8 @@ def user():
 def add_info(id):
     age=request.form["age"]
     content=request.form["content"]
+    if session["csrf_token"] != request.form["csrf_token"]:
+        return render_template("user.html", id=id, info=False, message="Lähetys ei onnistu")
     if len(content)==0 or len(age)==0:
         return render_template("user.html", id=id, info=False, message="Täytä molemmat kentät")
     if len(content)>121:
@@ -116,6 +122,8 @@ def update_info(id):
 def send_update(id):
     age=request.form["age"]
     content=request.form["content"]
+    if session["csrf_token"] != request.form["csrf_token"]:
+        return render_template("update_info.html", id=id, error=True, message="Päivitys ei onnistu")
     if len(content)==0 or len(age)==0:
         return render_template("update_info.html", id=id, error=True, message="Täytä molemmat kentät")
     if len(content)>121:
