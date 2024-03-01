@@ -2,10 +2,10 @@
 Muokkaa tietojasi: <br>
 <p>
 Ikä: 
-<textarea name="age" rows="1" cols="3"></textarea>
+<textarea name="age" rows="1" cols="3">{{age}}</textarea>
 <p>
 Lempielokuva: 
-<textarea name="content" rows="1" cols="30"></textarea>
+<textarea name="content" rows="1" cols="30">{{content}}</textarea>
 <p>
 <input type="submit" value="Lähetä">
 <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">

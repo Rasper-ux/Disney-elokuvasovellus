@@ -1,9 +1,9 @@
 <form action="/register" method="post">
-Tunnus: <input type="text" name="username">
+Tunnus: <input type="text" name="username" value={{username}}>
 <p>
-Salasana: <input type="password" name="password1">
+Salasana: <input type="password" name="password1" value={{password1}}>
 <p>
-Salasana uudestaan: <input type="password" name="password2">
+Salasana uudestaan: <input type="password" name="password2" value={{password2}}>
 <p>
 <input type="submit" value="Luo tunnus">
 <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
