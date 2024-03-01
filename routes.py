@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template, request, redirect
+from flask import session
 import films, users
 
 @app.route("/")
@@ -69,6 +70,8 @@ def send(id):
     alikes=films.get_alikes(id)
     content = request.form["content"]
     stars = request.form["stars"]
+    if session["csrf_token"] != request.form["csrf_token"]:
+        return render_template("film.html", reviews=list, id=id, name=name[0][0], alikes=alikes, error=True, message="Arvostelun lähetys ei onnistunut")
     if len(content)==0 or len(stars)==0:
         return render_template("film.html", reviews=list, id=id, name=name[0][0], alikes=alikes, error=True, message="Valitse tähdet ja kirjoita arvostelu")
     if len(content)>100:

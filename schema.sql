@@ -36,5 +36,33 @@ INSERT INTO alike (film1_id, film2_id) VALUES (4,18);
 INSERT INTO alike (film1_id, film2_id) VALUES (18,4);
 INSERT INTO alike (film1_id, film2_id) VALUES (5,18);
 INSERT INTO alike (film1_id, film2_id) VALUES (18,5);
+INSERT INTO alike (film1_id, film2_id) VALUES (4,9);
+INSERT INTO alike (film1_id, film2_id) VALUES (9,4);
+INSERT INTO alike (film1_id, film2_id) VALUES (5,9);
+INSERT INTO alike (film1_id, film2_id) VALUES (9,5);
+INSERT INTO alike (film1_id, film2_id) VALUES (18,9);
+INSERT INTO alike (film1_id, film2_id) VALUES (9,18);
+INSERT INTO alike (film1_id, film2_id) VALUES (17,16);
+INSERT INTO alike (film1_id, film2_id) VALUES (16,17);
+INSERT INTO alike (film1_id, film2_id) VALUES (6,7);
+INSERT INTO alike (film1_id, film2_id) VALUES (7,6);
+INSERT INTO alike (film1_id, film2_id) VALUES (8,10);
+INSERT INTO alike (film1_id, film2_id) VALUES (10,8);
+INSERT INTO alike (film1_id, film2_id) VALUES (8,12);
+INSERT INTO alike (film1_id, film2_id) VALUES (12,8);
+INSERT INTO alike (film1_id, film2_id) VALUES (10,12);
+INSERT INTO alike (film1_id, film2_id) VALUES (12,10);
+INSERT INTO alike (film1_id, film2_id) VALUES (12,7);
+INSERT INTO alike (film1_id, film2_id) VALUES (12,6);
+INSERT INTO alike (film1_id, film2_id) VALUES (3,11);
+INSERT INTO alike (film1_id, film2_id) VALUES (11,3);
+INSERT INTO alike (film1_id, film2_id) VALUES (13,10);
+INSERT INTO alike (film1_id, film2_id) VALUES (10,13);
+INSERT INTO alike (film1_id, film2_id) VALUES (14,2);
+INSERT INTO alike (film1_id, film2_id) VALUES (2,14);
+
+
+
+
 
 
