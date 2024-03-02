@@ -8,6 +8,7 @@ Sovelluksessa näkyy luettelo Disneyn animaatioelokuvista, joista voi katsoa tie
 - Luettelon elokuvista voi myös järjestää elokuvien keston, arvosanan tai julkaisuvuoden mukaan.
 
 
+
 Käynnistysohje:
 
 Kloonaa tämä repositorio omalle koneellesi ja siirry sen juurikansioon. Luo kansioon .env-tiedosto ja määritä sen sisältö seuraavanlaiseksi:

@@ -1,7 +1,7 @@
 <form action="/send/{{ id }}" method="POST">
 <h1>{{ name }}</h1>
 <hr>
-<i>Samankaltaiset:</i>
+<h3>Samankaltaiset:</h3>
 <p>
 {% for alike in alikes %}
 {{ alike[0] }}
@@ -9,14 +9,14 @@
 {% endfor %}
 <hr>
 {% for review in reviews %}
-<i>Käyttäjä:</i> <a href="/show_info/{{ review[5] }}">{{ review[4] }}</a>
+<h3>Käyttäjä: <a href="/show_info/{{ review[5] }}">{{ review[4] }}</a></h3>
 <p>
 <i>Arvostelu:</i> {{ review[2] }}
 <p>
 <i>Tähdet:</i> {{ review[3] }}
 <hr>
 {% endfor %}
-Arvostele: <br>
+<h3>Arvostele:</h3>
 <p>
 <input type="radio" name="stars" value="1" required> 1
 <input type="radio" name="stars" value="2"> 2
