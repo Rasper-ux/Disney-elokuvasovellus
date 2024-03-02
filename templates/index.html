@@ -1,3 +1,14 @@
+<head>
+<style>
+body {
+    margin: auto;
+    max-width: 45em;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+</style>
+</head>
+
+<body>
 <h1>Disney-elokuvasovellus</h1>
 {% if session.user_id %}
 <p>
@@ -37,3 +48,4 @@ Järjestä:  <a href="/order/1">Uusimmasta vanhimpaani</a> | <a href="/">Vanhimm
 <hr>
 {% endfor %}
 {% endif %}
+</body>

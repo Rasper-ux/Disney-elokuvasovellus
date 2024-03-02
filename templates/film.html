@@ -1,3 +1,14 @@
+<head>
+<style>
+body {
+    margin: auto;
+    max-width: 45em;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+</style>
+</head>
+
+<body>
 <form action="/send/{{ id }}" method="POST">
 <h1>{{ name }}</h1>
 <hr>
@@ -34,3 +45,4 @@
 <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
 </form>
 <a href="/">Etusivulle</a>
+</body>
