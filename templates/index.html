@@ -4,7 +4,7 @@
 Olet kirjautunut sisään.
 <a href="/logout">Kirjaudu ulos</a> | <a href="/user">Omat tiedot</a>
 <p>
-Järjestä:  <a href="/order/1">Uusimmasta vanhimpaani</a> | <a href="/">Vanhimmasta uusimpaaan</a> | <a href="/order/2">Arvosanojen keskiarvo (arvostellut)</a>
+Järjestä:  <a href="/order/1">Uusimmasta vanhimpaani</a> | <a href="/">Vanhimmasta uusimpaaan</a> | <a href="/order/2">Arvosanojen keskiarvo (arvostellut)</a> | <a href="/order/3">Kesto (lyhimmästä pisimpään)</a>
 <p>
 <form action="/search" method="GET">
 Haku: <input type="text" name="query" value={{film}}>
@@ -26,7 +26,7 @@ Haku: <input type="text" name="query" value={{film}}>
 <p>
 <a href="/login">Kirjaudu sisään</a>
 <p>
-Järjestä:  <a href="/order/1">Uusimmasta vanhimpaani</a> | <a href="/">Vanhimmasta uusimpaaan</a> | <a href="/order/2">Arvosanojen keskiarvo (arvostellut)</a>
+Järjestä:  <a href="/order/1">Uusimmasta vanhimpaani</a> | <a href="/">Vanhimmasta uusimpaaan</a> | <a href="/order/2">Arvosanojen keskiarvo (arvostellut)</a> | <a href="/order/3">Kesto (lyhimmästä pisimpään)</a>
 <hr>
 {% for movie in movies %}
 <i>Nimi:</i> {{ movie[1] }}

@@ -1,16 +1,11 @@
 # Disney-elokuvasovellus
-Sovelluksessa näkyy luettelo vuodesta 1937 nykypäivään julkaistuista Disneyn animaatioelokuvista, joista voi etsiä tietoa ja lukea arvioita.
+Sovelluksessa näkyy luettelo Disneyn animaatioelokuvista, joista voi katsoa tietoa ja lukea arvioita.
 - Käyttäjä voi kirjautua sisään ja ulos sekä luoda uuden tunnuksen.
-- Käyttäjä voi lisätä profiiliinsa tietoa, kuten käyttäjänimen, syntymäpäivän ja lempielokuvan.
-- Käyttäjä näkee luettelon elokuvista julkaisuvuosineen julkaisujärjestyksessä ja voi painaa elokuvasta, jolloin siitä näytetään lisää tietoa (esimerkiksi kesto, muiden käyttäjien antamat arvosanat ja kirjalliset arvostelut).
-- Käyttäjä voi etsiä elokuvia, esim. keston, arvosanan tai julkaisuvuoden mukaan.
+- Käyttäjä voi lisätä profiiliinsa tietoa, kuten ikänsä ja lempielokuvan, joita voi myöhemmin muokata.
+- Käyttäjä näkee luettelon elokuvista julkaisuvuosineen ja kestoineen julkaisujärjestyksessä ja voi painaa elokuvasta, jolloin siitä näytetään lisää tietoa (muiden käyttäjien antamat arvosanat ja kirjalliset arvostelut, sekä samankaltaiset elokuvat).
+- Arvostelun antajaa painamalla näkee tietoja arvostelijasta
+- Käyttäjä voi etsiä elokuvia hakusanoilla nimen mukaan.
 - Luettelon elokuvista voi myös järjestää elokuvien keston, arvosanan tai julkaisuvuoden mukaan.
-
-Tällä hetkellä sovelluksessa toimii:
-- kirjautuminen ja uuden tunnuksen luominen
-- aloitussivulla näkyy lista elokuvista (vielä vain osa niistä)
-- kirjautumisen jälkeen käyttäjä voi lisätä elokuvan sivulla elokuvalle arvostelun
-- elokuvan sivulla näkyy (vielä vain osassa) samankaltaiset elokuvat
 
 
 Käynnistysohje:
