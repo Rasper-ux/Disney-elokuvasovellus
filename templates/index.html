@@ -40,7 +40,7 @@ Haku: <input type="text" name="query" value={{film}}>
 Järjestä:  <a href="/order/1">Uusimmasta vanhimpaani</a> | <a href="/">Vanhimmasta uusimpaaan</a> | <a href="/order/2">Arvosanojen keskiarvo (arvostellut)</a> | <a href="/order/3">Kesto (lyhimmästä pisimpään)</a>
 <hr>
 {% for movie in movies %}
-<i>Nimi:</i> {{ movie[1] }}
+<h4>{{ movie[1] }}</h4>
 <p>
 <i>Vuosi:</i> {{ movie[2] }}
 <p>
